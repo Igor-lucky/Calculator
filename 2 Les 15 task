@@ -1,0 +1,63 @@
+result = None
+operand = None
+operand2 = None
+operator = None
+wait_for_number = True
+
+while True:
+    if result == None:        
+        operand = input("Input number 1: ")
+    else:
+        operand = result
+
+    
+    while True:
+        operator = input("Введите действие: ")
+        if operator not in ('+', '-', '*', '/', '='):
+            print(f"{operator} is not '+' or '-' or '/' or '*'. Try again")
+            continue
+        break
+    
+
+
+    if operator == "=":
+        print(f"Резутьтат = {result}")
+        break 
+    
+    
+    while True:
+        operand2 = input("Input number_2: ")
+    
+        try:
+            operand2 = float(operand2)
+            break 
+        except ValueError:
+            print(f"{operand2} is not number. Try again")
+
+
+         
+    if operator == "+" :
+        result = float(operand) + float(operand2)
+    elif operator == "-":
+        result = float(operand) - float(operand2)
+    elif operator == "/":
+        if operand2 == 0:
+            print("на ноль делить нельзя!")
+            continue
+        result = float(operand) / float(operand2)
+    elif operator == "*":
+        result = float(operand) * float(operand2)
+
+
+
+    # print(f"Первое число = {operand}")
+    # print(f"Второе число = {operand2}")
+    # print(f"Действие  {operator}")
+    # print(f"Резутьтат = {result}")
+
+
+
+
+
+
+
